@@ -38,3 +38,6 @@ out/
 
 ### Docker ####
 docker
+docker/
+docker/db/
+docker/db/data
