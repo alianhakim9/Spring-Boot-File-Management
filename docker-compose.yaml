@@ -1,17 +1,13 @@
 version: "3.5"
 services:
-  spring-boot-file-management-db:
-    container_name: spring-boot-db
+  spring-boot-file-mysql:
+    container_name: "spring-boot-file-mysql"
     image: mysql:8
-    environment:
-      MYSQL_ROOT_PASSWORD: spring-boot-file-management
-      MYSQL_ROOT_USERNAME: spring-boot-file-management
-      MYSQL_PASSWORD: spring-boot-file-management
-      MYSQL_USER: spring-boot-file-management-user
-      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
     ports:
-      - '3306:3306'
-    volumes:
-      - './docker/db/data:/var/lib/mysql'
-      - './docker/db/my.cnf:/etc/mysql/conf.d/my.cnf'
-      - './docker/db/sql:/docker-entrypoint-initdb.d'
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: CMqBKXyaIwfOHi9Ew6rC
+      MYSQL_DATABASE: file_db
+      MYSQL_USER: spring-boot-file-management
+      MYSQL_PASSWORD: CMqBKXyaIwfOHi9Ew6rC
+      MYSQL_HOST: 127.0.0.1
